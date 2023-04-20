@@ -44,6 +44,7 @@
     "vue/multi-word-component-names": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "no-console": "off"
   }
 }

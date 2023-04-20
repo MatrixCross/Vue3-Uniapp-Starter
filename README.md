@@ -1,6 +1,8 @@
 # uni-vue3-ts-template
 uni-app Vue3 + TypeScript + Vite + Pinia + Unocss 模板项目
 
+fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-template)
+
 支持小程序，H5，App
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTY1MzIxODc4OTk1OQ==653218789959)

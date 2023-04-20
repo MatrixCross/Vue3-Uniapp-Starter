@@ -30,7 +30,7 @@ const getCode = () => {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .axios-demo {
   text-align: center;
 }

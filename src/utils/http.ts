@@ -1,6 +1,7 @@
-// @ts-ignore
-import buildURL from 'axios/lib/helpers/buildURL'
 import type { AxiosRequestConfig } from 'axios'
+// @ts-ignore
+// eslint-disable-next-line import/no-relative-packages
+import buildURL from '../../node_modules/axios/lib/helpers/buildURL'
 
 type ParamsSerializer = AxiosRequestConfig['paramsSerializer']
 
@@ -13,7 +14,11 @@ export function getFullURL(
   if (url.startsWith('http')) {
     return buildURL(url, params, paramsSerializer)
   }
-  baseURL = baseURL.endsWith('/') ? baseURL : `${baseURL}/`
-  url = url.startsWith('/') ? url.slice(1) : url
-  return buildURL(`${baseURL}${url}`, params, paramsSerializer)
+  return buildURL(
+    `${baseURL.endsWith('/') ? baseURL : `${baseURL}/`}${
+      url.startsWith('/') ? url.slice(1) : url
+    }`,
+    params,
+    paramsSerializer
+  )
 }
