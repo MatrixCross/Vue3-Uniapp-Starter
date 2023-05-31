@@ -54,9 +54,9 @@
     "@dcloudio/uni-quickapp-webview": "3.0.0-3080420230531001",
     "axios": "^1.4.0",
     "cz-git": "^1.6.1",
-    "pinia": "^2.0.36",
+    "pinia": "2.0.36",
     "vk-uview-ui": "^1.4.8",
-    "vue": "^3.2.47"
+    "vue": "3.2.47"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
