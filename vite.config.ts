@@ -1,14 +1,33 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import path from 'path'
-import Unocss from 'unocss/vite'
+import unocss from 'unocss/vite'
+import unimport from 'unimport/unplugin'
+import autoImport from 'unplugin-auto-import/vite'
+import components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     uni(),
     // https://github.com/antfu/unocss
-    Unocss()
+    unocss(),
+    autoImport({
+      dts: './src/types/auto-imports.d.ts',
+      imports: ['vue', 'pinia', '@vueuse/core'],
+      dirs: ['./src/store', './src/hooks/**', './src/api'],
+      eslintrc: {
+        enabled: true
+      }
+    }),
+    components({
+      dts: './src/types/components.d.ts',
+      types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }]
+    }),
+    unimport.vite({
+      dts: './src/types/unimport.d.ts',
+      presets: ['vue', 'pinia', '@vueuse/core']
+    })
   ],
   server: {
     // port: 8080,
@@ -32,5 +51,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components')
     }
-  },
+  }
 })

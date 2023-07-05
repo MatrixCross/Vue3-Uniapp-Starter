@@ -85,8 +85,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
 const flag = ref(true)
 
 function switchFlag() {

@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 const useStore = defineStore('storeId', {
   // arrow function recommended for full type inference
   state: () => ({

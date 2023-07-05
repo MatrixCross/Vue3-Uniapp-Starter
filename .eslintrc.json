@@ -18,7 +18,8 @@
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:vue/vue3-essential",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "./.eslintrc-auto-import.json"
   ],
   "plugins": ["vue", "@typescript-eslint", "todo-ddl"],
   "rules": {

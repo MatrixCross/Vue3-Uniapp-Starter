@@ -1,7 +1,7 @@
 <template>
   <view class="index-page">
-    <Hello />
-    <UnoCss />
+    <hello />
+    <unocss />
     <text class="h2"> 查看其它页面示例↓ </text>
     <view>
       <navigator v-for="(v, idx) in pages" :key="idx" :url="v.url">{{
@@ -12,10 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import Hello from '@/components/hello/index.vue'
-import UnoCss from '@/components/unocss/index.vue'
-
 const pages = reactive([
   {
     title: 'Pinia Demo',

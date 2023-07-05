@@ -6,9 +6,6 @@
   </view>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { userApi } from '@/api'
-
 const phone = ref('12345678901')
 
 const getCode = () => {

@@ -10,10 +10,6 @@
   </view>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useCountStore } from '@/store'
-
 // 获取自定义的store
 const store = useCountStore()
 
