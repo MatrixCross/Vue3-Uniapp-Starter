@@ -18,8 +18,8 @@ const pages = reactive([
     url: '/pages/pinia/index'
   },
   {
-    title: 'Axios Demo',
-    url: '/pages/axios/index'
+    title: 'Request Demo',
+    url: '/pages/request/index'
   },
   {
     title: 'uView Demo',

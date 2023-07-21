@@ -26,16 +26,18 @@ fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-templa
 
 ## Use This Template
 ```sh
-npx degit atqq/uni-vue3-ts-template#main my-uni-vue3-ts-vite-project
+pnpm create matrix-starter
 ```
+
+选择vue3 - uniapp模板
+
 ## Feature
 ### Prod
 * [x] [Vue3](https://vuejs.org/)
-* [x] [Pinia](https://pinia.vuejs.org/) - replace vuex
-* [x] [Axios](https://github.com/axios/axios)
-* UI/组件库
-  * [x] [uView](https://vkuviewdoc.fsq.pub/) - vk-uview-ui
-  * [ ] [uni-ui](https://github.com/dcloudio/uni-ui) - 待接入
+* [x] [Pinia](https://pinia.vuejs.org/) - 全局状态管理
+* [x] [uni-network](https://github.com/uni-helper/uni-network) 为 uni-app 打造的基于 Promise 的 HTTP 客户端
+* [x] [uni-use](https://vkuviewdoc.fsq.pub/) - vk-uview-ui vue3组件库
+* [x] [uView](https://vkuviewdoc.fsq.pub/) - uni-app (vue3) 组合式工具集
 ### Dev
 * [x] [Vite](https://github.com/vitejs/vite)
 * [x] [TypeScript](https://github.com/microsoft/TypeScript/#readme)
@@ -45,7 +47,7 @@ npx degit atqq/uni-vue3-ts-template#main my-uni-vue3-ts-vite-project
 * [x] [Prettier](https://prettier.io/)
 * [x] [Vitest](https://vitest.dev/) - replace jest
 * [x] [unocss](https://github.com/unocss/unocss) - 即时按需原子 css 引擎
-* [x] GitHooks [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks#readme)
+* [x] [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks#readme) - GitHooks 
 * [x] [unimport](https://github.com/unjs/unimport) - 在js侧按需import
 * [x] [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - 在vue侧按需import
 * [x] [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components) - 在vue侧按需import

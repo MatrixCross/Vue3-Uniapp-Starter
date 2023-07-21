@@ -14,9 +14,9 @@
       }
     },
     {
-      "path": "pages/axios/index",
+      "path": "pages/request/index",
       "style": {
-        "navigationBarTitleText": "Axios（网络请求示例）"
+        "navigationBarTitleText": "网络请求示例"
       }
     },
     {

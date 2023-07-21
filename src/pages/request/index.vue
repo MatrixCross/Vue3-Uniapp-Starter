@@ -1,6 +1,6 @@
 <template>
   <view class="axios-demo">
-    <view class="title-h1">Axios Page</view>
+    <view class="title-h1">Request Page</view>
     <input type="number" v-model="phone" />
     <button @click="getCode">获取验证码(GET)</button>
   </view>

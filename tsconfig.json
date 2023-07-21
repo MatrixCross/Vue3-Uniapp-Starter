@@ -12,6 +12,7 @@
     "lib": ["esnext", "dom"],
     "types": [
       "@dcloudio/types",
+      "@uni-helper/uni-app-types",
       "vite/client",
       "@types/node",
       "vitest/globals"
@@ -22,5 +23,8 @@
       "@components/*": ["src/components/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
+  }
 }
