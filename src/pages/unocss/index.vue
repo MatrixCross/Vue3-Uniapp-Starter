@@ -3,9 +3,7 @@
     <view class="text-lg mb-2 text-c2">使用 class</view>
     <view class="p-5 bg-white rounded-xl shadow-md flex items-center mx-auto">
       <view>
-        <view
-          class="h-100 w-100 bg-cover bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
-        />
+        <view class="h-100 w-100 bg-cover i-logos-unocss" />
       </view>
       <view class="ml-5">
         <view class="text-xl text-c1">UnoCSS</view>
@@ -27,9 +25,7 @@
       :class="[flag ? 'bg-white' : 'bg-green']"
     >
       <view>
-        <view
-          class="h-100 w-100 bg-cover bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
-        />
+        <view class="h-100 w-100 bg-cover i-logos-unocss" />
       </view>
       <view class="ml-5">
         <view class="text-xl">UnoCSS</view>
@@ -40,11 +36,7 @@
     <view text="lg c2" m="b2 t4">使用 Attributify mode </view>
     <view rounded-xl shadow-md flex items-center mx-auto p-5 bg-white>
       <view>
-        <view
-          h-100
-          w-100
-          bg="cover [url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
-        />
+        <view h-100 w-100 bg="cover" class="i-logos-unocss" />
       </view>
       <view ml-5>
         <view text="xl c1">UnoCSS</view>
@@ -60,7 +52,7 @@
         m-3
         animate="iteration-infinite swing"
         bg-cover
-        class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
+        class="i-logos-unocss"
       ></view>
 
       <view
@@ -69,7 +61,7 @@
         m-3
         bg-cover
         animate="pulse-bck"
-        class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
+        class="i-logos-unocss"
       ></view>
 
       <view
@@ -78,7 +70,7 @@
         m-3
         bg-cover
         animate="rubber-band iteration-infinite"
-        class="bg-[url(https://img.cdn.sugarat.top/mdImg/MTY2ODA4OTc3MjcyMg==unocss-icon-gray.svg)]"
+        class="i-logos-unocss"
       ></view>
     </view>
   </view>

@@ -1,9 +1,10 @@
 <template>
   <view class="index-page">
+    <view class="w-100vw h-100vw i-local-feat"></view>
     <hello />
     <unocss />
     <text class="h2"> 查看其它页面示例↓ </text>
-    <view>
+    <view pb-100rpx>
       <navigator v-for="(v, idx) in pages" :key="idx" :url="v.url">{{
         v.title
       }}</navigator>
@@ -12,6 +13,10 @@
 </template>
 
 <script setup lang="ts">
+// @todo: unplugin-vue-components在微信小程序不生效
+import hello from '@/components/hello'
+import unocss from '@/components/unocss'
+
 const pages = reactive([
   {
     title: 'Pinia Demo',
