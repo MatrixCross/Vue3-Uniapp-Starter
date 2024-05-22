@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-// @todo: unplugin-vue-components在微信小程序不生效
+// @todo: unplugin-vue-components和easycom都不生效，待研究
 import hello from '@/components/hello'
 import unocss from '@/components/unocss'
 
