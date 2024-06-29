@@ -10,5 +10,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Hello: typeof import('./../components/hello/hello.vue')['default']
     Unocss: typeof import('./../components/unocss/unocss.vue')['default']
+    UButton: typeof import('vk-uview-ui/components/u-button/u-button.vue')['default']
   }
 }
