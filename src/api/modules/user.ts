@@ -3,7 +3,7 @@ import http from '../http'
 function login(account: string, pwd: string) {
   return http.post('user/login', {
     account,
-    pwd
+    pwd,
   })
 }
 
@@ -14,11 +14,11 @@ function login(account: string, pwd: string) {
 function getCode(phone: string): Promise<{ num: number }> {
   return http.get('random/code', {
     params: {
-      phone
-    }
+      phone,
+    },
   })
 }
 export default {
   login,
-  getCode
+  getCode,
 }

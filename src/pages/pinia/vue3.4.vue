@@ -1,13 +1,3 @@
-<template>
-  <view class="pinia-demo">
-    <content
-      v-model="store.count"
-      msg="Pinia(Replace Vuex)"
-      @add="store.count++"
-      @asyncAdd="asyncAdd"
-    />
-  </view>
-</template>
 <script setup lang="ts">
 // @todo: uniapp暂时不支持vue3.4的一些语法糖，content组件的写法会导致报错
 
@@ -25,6 +15,18 @@ const store = useCountStore()
 // or actions
 const asyncAdd = () => store.asyncIncrease()
 </script>
+
+<template>
+  <view class="pinia-demo">
+    <content
+      v-model="store.count"
+      msg="Pinia(Replace Vuex)"
+      @add="store.count++"
+      @asyncAdd="asyncAdd"
+    />
+  </view>
+</template>
+
 <style lang="scss" scoped>
 .pinia-demo {
   text-align: center;

@@ -8,11 +8,11 @@ const instance = un.create({
   baseUrl: import.meta.env.VITE_APP_REQUEST_BASE_URL,
   // #endif
   // #ifndef H5
-  // @ts-ignore
+  // @ts-expect-error
   baseURL: 'https://service-rbji0bev-1256505457.cd.apigw.tencentcs.com/release',
   // #endif
   timeout: 6000,
-  headers: { 'X-Custom-Header': 'foobar' }
+  headers: { 'X-Custom-Header': 'foobar' },
 })
 
 /**
@@ -24,7 +24,7 @@ instance.interceptors.request.use(
     const { method, params } = config
     // 附带鉴权的token
     const headers: any = {
-      token: uni.getStorageSync('token')
+      token: uni.getStorageSync('token'),
     }
     // 不缓存get请求
     if (method === 'get') {
@@ -35,19 +35,19 @@ instance.interceptors.request.use(
       headers['Content-type'] = 'application/json;'
       Object.assign(config, {
         data: params,
-        params: {}
+        params: {},
       })
     }
 
     return {
       ...config,
-      headers
+      headers,
     }
   },
   (error) => {
     // 对请求错误做些什么
     return Promise.reject(error)
-  }
+  },
 )
 
 /**
@@ -55,11 +55,11 @@ instance.interceptors.request.use(
  */
 
 instance.interceptors.response.use(
-  // @ts-ignore
+  // @ts-expect-error
   (v) => {
     // 2xx 范围内的状态码都会触发该函数
     // 下面改成适合你的项目的接口处理逻辑
-    // @ts-ignore
+    // @ts-expect-error
     if (v.data?.code === 401) {
       uni.removeStorageSync('token')
       // alert('即将跳转登录页。。。', '登录过期')
@@ -67,7 +67,7 @@ instance.interceptors.response.use(
       return v.data
     }
 
-    // @ts-ignore
+    // @ts-expect-error
     if ((v.status || v.statusCode) === 200) {
       return v.data
     }
@@ -78,7 +78,7 @@ instance.interceptors.response.use(
     // 超出 2xx 范围的状态码都会触发该函数
     // 对响应错误做点什么
     return Promise.reject(error)
-  }
+  },
 )
 
 export default instance

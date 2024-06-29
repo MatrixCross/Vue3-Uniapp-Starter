@@ -1,17 +1,23 @@
+<script setup lang="ts">
+const title = ref('Hello')
+</script>
+
 <template>
   <view class="hello">
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
-      <text class="title">{{ title }}</text>
+      <text class="title">
+        {{ title }}
+      </text>
     </view>
-    <view class="scss-title">这是scss 全局变量的样式</view>
-    <view class="less-title">这是less 全局变量的样式</view>
+    <view class="scss-title">
+      这是scss 全局变量的样式
+    </view>
+    <view class="less-title">
+      这是less 全局变量的样式
+    </view>
   </view>
 </template>
-
-<script setup lang="ts">
-const title = ref('Hello')
-</script>
 
 <style>
 .hello {

@@ -1,14 +1,3 @@
-<template>
-  <view class="pinia-demo">
-    <view class="title-h2">Pinia(Replace Vuex)</view>
-    <text class="title-h3">{{ isEven ? 'Even' : 'Odd' }}</text>
-    <text>{{ count }}</text>
-    <view>
-      <button @click="add">Sync Add</button>
-      <button @click="asyncAdd">Async Add</button>
-    </view>
-  </view>
-</template>
 <script setup lang="ts">
 // 获取自定义的store
 const store = useCountStore()
@@ -24,10 +13,11 @@ const isEven = computed(() => store.count % 2 === 0)
 // const isEven = computed(() => store.isEven)
 
 // add 方法
-const add = () =>
-  store.$patch((v) => {
+function add() {
+  return store.$patch((v) => {
     v.count += 1
   })
+}
 // or actions
 // const add = () => store.synIncrease()
 
@@ -40,6 +30,27 @@ const add = () =>
 // or actions
 const asyncAdd = () => store.asyncIncrease()
 </script>
+
+<template>
+  <view class="pinia-demo">
+    <view class="title-h2">
+      Pinia(Replace Vuex)
+    </view>
+    <text class="title-h3">
+      {{ isEven ? 'Even' : 'Odd' }}
+    </text>
+    <text>{{ count }}</text>
+    <view>
+      <button @click="add">
+        Sync Add
+      </button>
+      <button @click="asyncAdd">
+        Async Add
+      </button>
+    </view>
+  </view>
+</template>
+
 <style lang="scss" scoped>
 .pinia-demo {
   text-align: center;

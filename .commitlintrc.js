@@ -27,9 +27,9 @@ module.exports = {
         'wip',
         'workflow',
         'types',
-        'release'
-      ]
-    ]
+        'release',
+      ],
+    ],
   },
   prompt: {
     // 中英文对照版
@@ -67,5 +67,5 @@ module.exports = {
     //   { value: 'workflow', name: 'workflow: 工作流程改进' },
     //   { value: 'types', name: 'types:    类型定义文件修改' }
     // ]
-  }
+  },
 }
