@@ -71,7 +71,6 @@
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-4020320240629001",
     "@iconify/json": "^2.2.223",
     "@iconify/utils": "^2.1.25",
-    "@swc/register": "^0.1.10",
     "@types/node": "^20.14.9",
     "@uni-helper/uni-app-types": "^0.5.13",
     "@uni-helper/uni-ui-types": "^0.5.15",
