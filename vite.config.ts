@@ -2,6 +2,8 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import autoImport from 'unplugin-auto-import/vite'
+import genComponentDts from '@wyatex/unplugin-gen-uniapp-components-dts/vite'
+import { VkUviewUiResolver } from '@wyatex/unplugin-gen-uniapp-components-dts/resolvers'
 // unocss新版只提供esm打包，但是uniapp不支持
 // 暂时用jiti兼容，等待nodejs v22之后应该能支持cjs和esm互相导入
 import createJITI from 'jiti'
@@ -19,6 +21,10 @@ export default defineConfig({
       dts: './src/types/auto-imports.d.ts',
       imports: ['vue', 'pinia', '@vueuse/core'],
       dirs: ['./src/store', './src/hooks/**', './src/api'],
+    }),
+    genComponentDts({
+      dtsPath: './src/types/components.d.ts',
+      resolvers: [VkUviewUiResolver],
     }),
   ],
   server: {
