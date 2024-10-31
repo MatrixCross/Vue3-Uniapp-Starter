@@ -1,4 +1,4 @@
-import un from '@uni-helper/uni-network'
+import { un } from '@uni-helper/uni-network'
 
 const instance = un.create({
   // Web 侧可以通过 vite.config.js 中的 proxy 配置，指定代理
@@ -8,7 +8,6 @@ const instance = un.create({
   baseUrl: import.meta.env.VITE_APP_REQUEST_BASE_URL,
   // #endif
   // #ifndef H5
-  // @ts-expect-error
   baseURL: 'https://service-rbji0bev-1256505457.cd.apigw.tencentcs.com/release',
   // #endif
   timeout: 6000,
@@ -55,11 +54,11 @@ instance.interceptors.request.use(
  */
 
 instance.interceptors.response.use(
-  // @ts-expect-error
+  // @ts-expect-error 暂时忽略类型检查
   (v) => {
     // 2xx 范围内的状态码都会触发该函数
     // 下面改成适合你的项目的接口处理逻辑
-    // @ts-expect-error
+    // @ts-expect-error 暂时忽略类型检查
     if (v.data?.code === 401) {
       uni.removeStorageSync('token')
       // alert('即将跳转登录页。。。', '登录过期')
@@ -67,7 +66,7 @@ instance.interceptors.response.use(
       return v.data
     }
 
-    // @ts-expect-error
+    // @ts-expect-error 暂时忽略类型检查
     if ((v.status || v.statusCode) === 200) {
       return v.data
     }

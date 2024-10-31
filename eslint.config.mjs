@@ -10,5 +10,8 @@ export default antfu(
       quotes: 'single',
       semi: false,
     },
+    rules: {
+      'no-console': 'off',
+    },
   },
 )

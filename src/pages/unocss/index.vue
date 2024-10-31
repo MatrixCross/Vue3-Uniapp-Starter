@@ -7,13 +7,13 @@ function switchFlag() {
 </script>
 
 <template>
-  <view class="p-4 bg-#e2f3fe">
+  <view class="bg-#e2f3fe p-4">
     <view class="mb-2 text-lg text-c2">
       使用 class
     </view>
-    <view class="p-5 mx-auto bg-white rounded-xl shadow-md flex items-center">
+    <view class="mx-auto flex items-center rounded-xl bg-white p-5 shadow-md">
       <view>
-        <view class="i-logos-unocss bg-cover h-100 w-100" />
+        <view class="i-logos-unocss h-100 w-100 bg-cover" />
       </view>
       <view class="ml-5">
         <view class="text-xl text-c1">
@@ -30,7 +30,7 @@ function switchFlag() {
         切换 class
       </view>
       <view
-        class="px-2 py-1 bg-#3498db/20 rounded text-#3498db"
+        class="rounded bg-#3498db/20 px-2 py-1 text-#3498db"
         @click="switchFlag"
       >
         点我切换
@@ -38,11 +38,11 @@ function switchFlag() {
     </view>
 
     <view
-      class="p-5 mx-auto rounded-xl shadow-md flex items-center"
+      class="mx-auto flex items-center rounded-xl p-5 shadow-md"
       :class="[flag ? 'bg-white' : 'bg-green']"
     >
       <view>
-        <view class="i-logos-unocss bg-cover h-100 w-100" />
+        <view class="i-logos-unocss h-100 w-100 bg-cover" />
       </view>
       <view class="ml-5">
         <view class="text-xl">
@@ -57,7 +57,7 @@ function switchFlag() {
     <view text="lg c2" m="b2 t4">
       使用 Attributify mode
     </view>
-    <view p-5 mx-auto bg-white rounded-xl shadow-md flex items-center>
+    <view mx-auto flex items-center rounded-xl bg-white p-5 shadow-md>
       <view>
         <view h-100 w-100 bg="cover" class="i-logos-unocss" />
       </view>
@@ -74,24 +74,24 @@ function switchFlag() {
     <view text="lg c2" m="b2 t4">
       基础动画
     </view>
-    <view my-2 flex justify-center items-center>
+    <view my-2 flex items-center justify-center>
       <view
 
         animate="iteration-infinite swing"
-        bg-cover m-3 h-100 w-100
+        m-3 h-100 w-100 bg-cover
         class="i-logos-unocss"
       />
 
       <view
 
-        bg-cover m-3 h-100 w-100
+        m-3 h-100 w-100 bg-cover
         animate="pulse-bck"
         class="i-logos-unocss"
       />
 
       <view
 
-        bg-cover m-3 h-100 w-100
+        m-3 h-100 w-100 bg-cover
         animate="rubber-band iteration-infinite"
         class="i-logos-unocss"
       />

@@ -1,15 +1,19 @@
-import { createSSRApp } from 'vue'
 import * as Pinia from 'pinia'
-// @ts-expect-error
+import { createUnistorage } from 'pinia-plugin-unistorage'
+import { createSSRApp } from 'vue'
+// @ts-expect-error vk-uview-ui没有类型定义
 import uView from 'vk-uview-ui'
 import App from './App.vue'
 
 // unocss
 import 'uno.css'
 
+const store = Pinia.createPinia()
+store.use(createUnistorage())
+
 export function createApp() {
   const app = createSSRApp(App)
-  app.use(Pinia.createPinia())
+  app.use(store)
   app.use(uView)
   return {
     app,

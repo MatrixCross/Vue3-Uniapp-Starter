@@ -1,10 +1,10 @@
-import presetWeapp from 'unocss-preset-weapp'
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import { defineConfig, presetIcons } from 'unocss'
+import presetWeapp from 'unocss-preset-weapp'
 import {
   transformerAttributify,
   transformerClass,
 } from 'unocss-preset-weapp/transformer'
-import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 
 export default defineConfig({
   presets: [

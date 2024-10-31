@@ -1,25 +1,10 @@
 <script setup lang="ts">
+// @todo: uniapp暂时不支持vue3.4的一些语法糖，content组件的写法会导致报错
+
 // 获取自定义的store
+import DemoContent from './components/demo-content.vue'
+
 const store = useCountStore()
-
-// 取需要的 state
-const { count } = storeToRefs(store)
-
-// isEven
-const isEven = computed(() => store.count % 2 === 0)
-// or 从 getters 中获取
-// const { isEven } = storeToRefs(store)
-// or 从 getters 中获取
-// const isEven = computed(() => store.isEven)
-
-// add 方法
-function add() {
-  return store.$patch((v) => {
-    v.count += 1
-  })
-}
-// or actions
-// const add = () => store.synIncrease()
 
 // asyncAdd 方法
 // const asyncAdd = () => store.$patch((v) => {
@@ -33,21 +18,12 @@ const asyncAdd = () => store.asyncIncrease()
 
 <template>
   <view class="pinia-demo">
-    <view class="title-h2">
-      Pinia(Replace Vuex)
-    </view>
-    <text class="title-h3">
-      {{ isEven ? 'Even' : 'Odd' }}
-    </text>
-    <text>{{ count }}</text>
-    <view>
-      <button @click="add">
-        Sync Add
-      </button>
-      <button @click="asyncAdd">
-        Async Add
-      </button>
-    </view>
+    <DemoContent
+      v-model="store.count"
+      msg="Pinia(Replace Vuex)"
+      @add="store.count++"
+      @async-add="asyncAdd"
+    />
   </view>
 </template>
 
@@ -55,12 +31,12 @@ const asyncAdd = () => store.asyncIncrease()
 .pinia-demo {
   text-align: center;
 
-  .title-h2 {
+  :deep(.title-h2) {
     color: red;
     font-size: 40rpx;
   }
 
-  .title-h3 {
+  :deep(.title-h3) {
     font-weight: bold;
   }
 }
