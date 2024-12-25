@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import type UToast from 'vk-uview-ui/components/u-toast/u-toast.vue'
+import { onShow } from '@dcloudio/uni-app'
 
 const uToast = ref<InstanceType<typeof UToast>>()
 
 onMounted(() => {
   getApp().globalData!.uToast = uToast.value
 })
-onActivated(() => {
+onShow(() => {
   getApp().globalData!.uToast = uToast.value
 })
 </script>

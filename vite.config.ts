@@ -46,7 +46,7 @@ export default defineConfig({
     autoImport({
       dts: './src/types/auto-imports.d.ts',
       imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports()],
-      dirs: ['./src/store', './src/hooks/**', './src/api'],
+      dirs: ['./src/store', './src/hooks/**', './src/api', './src/utils'],
     }),
   ],
   css: {

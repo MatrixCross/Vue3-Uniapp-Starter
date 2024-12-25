@@ -72,9 +72,9 @@ instance.interceptors.response.use(
     }
     // 默认全局使用uToast提示
     if (!v.config?.hideErrorTip) {
-      getApp().globalData?.uToast.show({
+      showUviewToast({
         title: v.config?.errorMessage || '网络错误',
-        icon: 'error',
+        type: 'error',
       })
     }
     return Promise.reject(v) as Record<string, any>
@@ -82,9 +82,9 @@ instance.interceptors.response.use(
   (v) => {
     // 默认全局使用uToast提示
     if (!v.config?.hideErrorTip) {
-      getApp().globalData?.uToast.show({
+      showUviewToast({
         title: v.config?.errorMessage || '网络错误',
-        icon: 'error',
+        type: 'error',
       })
     }
     // 超出 2xx 范围的状态码都会触发该函数

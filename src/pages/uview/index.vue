@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import { useUviewToast } from '@/hooks/use-uview-toast'
-
-const { show } = useUviewToast()
 function showToast(type: string) {
-  show({
+  showUviewToast({
     type,
     title: '这是一个提示',
   })
-  // getApp().globalData?.uToast.show({
-  //   type,
-  //   title: '这是一个提示',
-  // })
 }
 </script>
 

@@ -1,6 +1,4 @@
-import type UToast from 'vk-uview-ui/components/u-toast/u-toast.vue'
-
-type IToast = Partial<{
+type ToastOptions = Partial<{
   // 显示的文本
   title: string
   // 主题类型，不填默认为default
@@ -21,10 +19,6 @@ type IToast = Partial<{
   back: boolean
 }>
 
-export function useUviewToast() {
-  return {
-    show: (options: IToast) => {
-      getApp().globalData?.uToast.show(options)
-    },
-  }
+export function showUviewToast(options: ToastOptions) {
+  getApp().globalData?.uToast.show(options)
 }
