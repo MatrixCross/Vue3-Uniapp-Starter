@@ -16,6 +16,8 @@ function getCode(phone: string): Promise<{ num: number }> {
     params: {
       phone,
     },
+    // 接口报错时提示
+    errorMessage: '获取验证码失败',
   })
 }
 export default {

@@ -70,13 +70,26 @@ instance.interceptors.response.use(
     if ((v.status || v.statusCode) === 200) {
       return v.data
     }
-    // alert(v.statusText, '网络错误')
+    // 默认全局使用uToast提示
+    if (!v.config?.hideErrorTip) {
+      getApp().globalData?.uToast.show({
+        title: v.config?.errorMessage || '网络错误',
+        icon: 'error',
+      })
+    }
     return Promise.reject(v) as Record<string, any>
   },
-  (error) => {
+  (v) => {
+    // 默认全局使用uToast提示
+    if (!v.config?.hideErrorTip) {
+      getApp().globalData?.uToast.show({
+        title: v.config?.errorMessage || '网络错误',
+        icon: 'error',
+      })
+    }
     // 超出 2xx 范围的状态码都会触发该函数
     // 对响应错误做点什么
-    return Promise.reject(error)
+    return Promise.reject(v)
   },
 )
 

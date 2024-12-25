@@ -21,9 +21,9 @@ fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-templa
 
 ## Env Suggest
 
-**Node >= 14.19**
+**Node >= 16**
 
-**pnpm 7**
+**pnpm >= 7**
 
 **Registry taobao - https://registry.npmmirror.com/**
 
@@ -42,8 +42,8 @@ pnpm create matrix-starter
 - [x] [Vue3](https://vuejs.org/)
 - [x] [Pinia](https://pinia.vuejs.org/) - 全局状态管理
 - [x] [uni-network](https://github.com/uni-helper/uni-network) 为 uni-app 打造的基于 Promise 的 HTTP 客户端
-- [x] [uni-use](https://vkuviewdoc.fsq.pub/) - vk-uview-ui vue3组件库
-- [x] [uView](https://vkuviewdoc.fsq.pub/) - uni-app (vue3) 组合式工具集
+- [x] [uni-use](https://vkuviewdoc.fsq.pub/) - uni-app (vue3) 组合式工具集
+- [x] [uView](https://vkuviewdoc.fsq.pub/) - vk-uview-ui vue3组件库
 
 ### Dev
 
@@ -53,11 +53,12 @@ pnpm create matrix-starter
 - [x] [Less](https://github.com/less/less.js)
 - [x] [Eslint](https://eslint.org/)
 - [x] [Prettier](https://prettier.io/)
-- [x] [Vitest](https://vitest.dev/) - replace jest
 - [x] [unocss](https://github.com/unocss/unocss) - 即时按需原子 css 引擎
 - [x] [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks#readme) - GitHooks
-- [x] [unimport](https://github.com/unjs/unimport) - 在js侧按需import
-- [x] [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - 在vue侧按需import
+- [x] [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) - 直接使用 Composition API 无需引入
+- [x] [@uni-helper/vite-plugin-uni-manifest](https://github.com/uni-helper/vite-plugin-uni-manifest) - 创建 manifest.config.(ts|mts|cts|js|cjs|mjs|json), 然后用 TypeScript 编写你的 manifest.json
+- [x] [@uni-helper/vite-plugin-uni-components](https://github.com/uni-helper/vite-plugin-uni-components) - 直接使用组件无须import，支持typescript类型提示
+- [x] [@uni-helper/vite-plugin-uni-layouts](https://github.com/uni-helper/vite-plugin-uni-layouts) - Vite 下 uni-app 的可定制布局框架
 
 ## 使用
 
@@ -88,11 +89,7 @@ pnpm add esbuild-darwin-64@0.15.13 -D
 pnpm dev:mp-weixin
 ```
 
-> **Q1：** 如果dev的时候发现报错，可以尝试删除`node_modules`之后再在命令行中运行`pnpm install --shamefully-hoist`重新安装依赖再`pnpm dev:mp-weixin`
->
-> [详细参考文档](https://pnpm.io/zh/faq#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%883)
-
-> **Q2：** 如果运行白屏，有报错信息 “app.js错误ReferenceError: regeneratorRuntime is not defined”
+> **Q1：** 如果运行白屏，有报错信息 “app.js错误ReferenceError: regeneratorRuntime is not defined”
 >
 > 参考[解决方案](https://blog.csdn.net/FUFCY/article/details/125160828) 给微信小程序IDE开启**增强编译选项**
 
@@ -282,10 +279,3 @@ export default defineConfig({
 > 支持小程序，h5，app
 
 ![](https://fastly.jsdelivr.net/gh/MellowCo/image-host/2022/202211121156442.png)
-
-## 自动引入组件
-
-因为uniapp提供了easycom功能来实现组件自动引入注册、而且和`unplugin-auto-import`有冲突，不能使用`unplugin-auto-import`来实现组件自动注册，所以你需要手动标一下组件的类型：[components.d.ts](./src/types/components.d.ts)
-
-- todo: 后面实现一个插件来自动生成
-- easycom功能规则: https://uniapp.dcloud.net.cn/collocation/pages.html#easycom

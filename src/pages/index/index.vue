@@ -21,7 +21,7 @@ const pages = reactive([
 
 <template>
   <view class="index-page">
-    <view class="i-local-feat h-100vw w-100vw" />
+    <view class="i-local-feat h-100vw w-full" />
     <hello />
     <unocss />
     <text class="h2">

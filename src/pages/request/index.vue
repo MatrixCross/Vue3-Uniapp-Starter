@@ -10,13 +10,6 @@ function getCode() {
         icon: 'success',
       })
     })
-    .catch((err) => {
-      console.log(err)
-      uni.showToast({
-        title: '获取验证码失败',
-        icon: 'error',
-      })
-    })
 }
 </script>
 

@@ -1,20 +1,45 @@
+import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import { uniuseAutoImports } from '@uni-helper/uni-use'
-import { VkUviewUiResolver } from '@wyatex/unplugin-gen-uniapp-components-dts/resolvers'
-import genComponentDts from '@wyatex/unplugin-gen-uniapp-components-dts/vite'
-import autoImport from 'unplugin-auto-import/vite'
-import { defineConfig } from 'vite'
+import components, { kebabCase } from '@uni-helper/vite-plugin-uni-components'
+import layouts from '@uni-helper/vite-plugin-uni-layouts'
+import manifest from '@uni-helper/vite-plugin-uni-manifest'
 // unocss新版只提供esm打包，但是uniapp不支持
 // 暂时用jiti兼容，等待nodejs v22之后应该能支持cjs和esm互相导入
 import createJITI from 'jiti'
+import autoImport from 'unplugin-auto-import/vite'
+import { defineConfig } from 'vite'
 
 const jiti = createJITI(__filename)
 const unocss = jiti('unocss/vite').default
 
+function UViewResolver(): ComponentResolver {
+  return {
+    type: 'component',
+    resolve: (name: string) => {
+      if (name.match(/^U[A-Z]/)) {
+        const compName = kebabCase(name)
+        return {
+          name,
+          from: `vk-uview-ui/components/${compName}/${compName}.vue`,
+        }
+      }
+    },
+  }
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
+    manifest(),
+    layouts(),
+    components({
+      dts: './src/types/components.d.ts',
+      resolvers: [
+        UViewResolver(),
+      ],
+    }),
     uni(),
     // https://github.com/antfu/unocss
     unocss(),
@@ -23,11 +48,18 @@ export default defineConfig({
       imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports()],
       dirs: ['./src/store', './src/hooks/**', './src/api'],
     }),
-    genComponentDts({
-      dtsPath: './src/types/components.d.ts',
-      resolvers: [VkUviewUiResolver],
-    }),
   ],
+  css: {
+    // 配置`scss`和`less`全局变量
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/vars/_base.scss";',
+      },
+      less: {
+        additionalData: '@import "@/styles/vars/_base.less";',
+      },
+    },
+  },
   server: {
     // port: 8080,
     host: '0.0.0.0',
