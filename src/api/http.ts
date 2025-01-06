@@ -73,7 +73,7 @@ instance.interceptors.response.use(
     // 默认全局使用uToast提示
     if (!v.config?.hideErrorTip) {
       showUviewToast({
-        title: v.config?.errorMessage || '网络错误',
+        message: v.config?.errorMessage || '网络错误',
         type: 'error',
       })
     }
@@ -83,7 +83,7 @@ instance.interceptors.response.use(
     // 默认全局使用uToast提示
     if (!v.config?.hideErrorTip) {
       showUviewToast({
-        title: v.config?.errorMessage || '网络错误',
+        message: v.config?.errorMessage || '网络错误',
         type: 'error',
       })
     }

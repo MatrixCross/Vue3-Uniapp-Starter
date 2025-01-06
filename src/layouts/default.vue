@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import type UToast from 'vk-uview-ui/components/u-toast/u-toast.vue'
+import UpToast from 'uview-plus/components/u-toast/u-toast.vue'
+
 import { onShow } from '@dcloudio/uni-app'
 
-const uToast = ref<InstanceType<typeof UToast>>()
+const uToast = ref<InstanceType<typeof UpToast>>()
 
 onMounted(() => {
   getApp().globalData!.uToast = uToast.value
@@ -18,6 +19,6 @@ onShow(() => {
     <view class="mx-auto mt-5 text-center text-sm opacity-25">
       [Default Layout]
     </view>
-    <UToast ref="uToast" />
+    <UpToast ref="uToast" />
   </view>
 </template>

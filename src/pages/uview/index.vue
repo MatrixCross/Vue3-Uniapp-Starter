@@ -2,7 +2,7 @@
 function showToast(type: string) {
   showUviewToast({
     type,
-    title: '这是一个提示',
+    message: '这是一个提示',
   })
 }
 </script>

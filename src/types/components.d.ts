@@ -8,9 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Hello: typeof import('./../components/hello/hello.vue')['default']
-    UButton: typeof import('vk-uview-ui/components/u-button/u-button.vue')['default']
-    UIcon: typeof import('vk-uview-ui/components/u-icon/u-icon.vue')['default']
+    UGap: typeof import('uview-plus/components/u-gap/u-gap.vue')['default']
+    UIcon: typeof import('uview-plus/components/u-icon/u-icon.vue')['default']
+    ULoadingIcon: typeof import('uview-plus/components/u-loading-icon/u-loading-icon.vue')['default']
     Unocss: typeof import('./../components/unocss/unocss.vue')['default']
-    UToast: typeof import('vk-uview-ui/components/u-toast/u-toast.vue')['default']
+    UOverlay: typeof import('uview-plus/components/u-overlay/u-overlay.vue')['default']
+    UTransition: typeof import('uview-plus/components/u-transition/u-transition.vue')['default']
   }
 }

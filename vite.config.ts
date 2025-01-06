@@ -7,11 +7,11 @@ import layouts from '@uni-helper/vite-plugin-uni-layouts'
 import manifest from '@uni-helper/vite-plugin-uni-manifest'
 // unocss新版只提供esm打包，但是uniapp不支持
 // 暂时用jiti兼容，等待nodejs v22之后应该能支持cjs和esm互相导入
-import createJITI from 'jiti'
+import { createJiti } from 'jiti'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 
-const jiti = createJITI(__filename)
+const jiti = createJiti(__filename)
 const unocss = jiti('unocss/vite').default
 
 function UViewResolver(): ComponentResolver {
@@ -22,7 +22,7 @@ function UViewResolver(): ComponentResolver {
         const compName = kebabCase(name)
         return {
           name,
-          from: `vk-uview-ui/components/${compName}/${compName}.vue`,
+          from: `uview-plus/components/${compName}/${compName}.vue`,
         }
       }
     },

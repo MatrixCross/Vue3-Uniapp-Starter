@@ -43,7 +43,7 @@ pnpm create matrix-starter
 - [x] [Pinia](https://pinia.vuejs.org/) - 全局状态管理
 - [x] [uni-network](https://github.com/uni-helper/uni-network) 为 uni-app 打造的基于 Promise 的 HTTP 客户端
 - [x] [uni-use](https://vkuviewdoc.fsq.pub/) - uni-app (vue3) 组合式工具集
-- [x] [uView](https://vkuviewdoc.fsq.pub/) - vk-uview-ui vue3组件库
+- [x] [uview-plus](https://uview-plus.jiangruyi.com/) - uview-plus vue3组件库
 
 ### Dev
 
