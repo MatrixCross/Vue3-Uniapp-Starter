@@ -1,18 +1,18 @@
 import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
-import { uniuseAutoImports } from '@uni-helper/uni-use'
 import components, { kebabCase } from '@uni-helper/vite-plugin-uni-components'
 import layouts from '@uni-helper/vite-plugin-uni-layouts'
 import manifest from '@uni-helper/vite-plugin-uni-manifest'
-// unocss新版只提供esm打包，但是uniapp不支持
-// 暂时用jiti兼容，等待nodejs v22之后应该能支持cjs和esm互相导入
 import { createJiti } from 'jiti'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 
+// unocss新版只提供esm打包，但是uniapp不支持
+// 暂时用jiti兼容，如果是最新的node22可以使用require(esm)就可以不需要jiti
 const jiti = createJiti(__filename)
 const unocss = jiti('unocss/vite').default
+const uniuseAutoImports = jiti('@uni-helper/uni-use').uniuseAutoImports
 
 function UViewResolver(): ComponentResolver {
   return {
@@ -40,13 +40,16 @@ export default defineConfig({
         UViewResolver(),
       ],
     }),
+    unocss({
+      hmrTopLevelAwait: false,
+    }),
     uni(),
     // https://github.com/antfu/unocss
-    unocss(),
     autoImport({
       dts: './src/types/auto-imports.d.ts',
       imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports()],
       dirs: ['./src/store', './src/hooks/**', './src/api', './src/utils'],
+
     }),
   ],
   css: {

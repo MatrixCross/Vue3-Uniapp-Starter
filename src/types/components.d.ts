@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Hello: typeof import('./../components/hello/hello.vue')['default']
+    UButton: typeof import('uview-plus/components/u-button/u-button.vue')['default']
     UGap: typeof import('uview-plus/components/u-gap/u-gap.vue')['default']
     UIcon: typeof import('uview-plus/components/u-icon/u-icon.vue')['default']
     ULoadingIcon: typeof import('uview-plus/components/u-loading-icon/u-loading-icon.vue')['default']
