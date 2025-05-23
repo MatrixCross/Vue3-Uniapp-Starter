@@ -17,8 +17,7 @@
       "@uni-helper/uni-app-types",
       "@uni-helper/uni-ui-types",
       "vite/client",
-      "@types/node",
-      "vitest/globals"
+      "@types/node"
     ],
     "strict": true,
     "sourceMap": true,
