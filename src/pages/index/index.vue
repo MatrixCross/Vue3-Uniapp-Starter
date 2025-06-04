@@ -1,3 +1,8 @@
+<route type="home" lang="yaml">
+style:
+  navigationBarTitleText: "uni-app-home"
+</route>
+
 <script setup lang="ts">
 const pages = reactive([
   {
@@ -13,8 +18,16 @@ const pages = reactive([
     url: '/pages/uview/index',
   },
   {
+    title: 'WotUi Demo',
+    url: '/pages/wot/index',
+  },
+  {
     title: 'UnoCSS Demo',
     url: '/pages/unocss/index',
+  },
+  {
+    title: '分包',
+    url: '/package-a/page-a/index',
   },
 ])
 </script>

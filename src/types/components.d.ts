@@ -15,5 +15,6 @@ declare module 'vue' {
     Unocss: typeof import('./../components/unocss/unocss.vue')['default']
     UOverlay: typeof import('uview-plus/components/u-overlay/u-overlay.vue')['default']
     UTransition: typeof import('uview-plus/components/u-transition/u-transition.vue')['default']
+    WdButton: typeof import('wot-design-uni/components/wd-button/wd-button.vue')['default']
   }
 }

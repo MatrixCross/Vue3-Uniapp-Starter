@@ -2,8 +2,10 @@ import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import components, { kebabCase } from '@uni-helper/vite-plugin-uni-components'
+import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers'
 import layouts from '@uni-helper/vite-plugin-uni-layouts'
 import manifest from '@uni-helper/vite-plugin-uni-manifest'
+import pages from '@uni-helper/vite-plugin-uni-pages'
 import { createJiti } from 'jiti'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
@@ -33,12 +35,16 @@ function UViewResolver(): ComponentResolver {
 export default defineConfig({
   plugins: [
     manifest(),
+    pages({
+      // 忽略
+      exclude: ['**/components/*.*'],
+      // 子包
+      subPackages: ['src/package-a'],
+    }),
     layouts(),
     components({
       dts: './src/types/components.d.ts',
-      resolvers: [
-        UViewResolver(),
-      ],
+      resolvers: [WotResolver(), UViewResolver()],
     }),
     unocss({
       hmrTopLevelAwait: false,
@@ -47,9 +53,21 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     autoImport({
       dts: './src/types/auto-imports.d.ts',
-      imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports()],
+      imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports(), {
+        'wot-design-uni': [
+          ['useToast', 'useWdToast'],
+        ],
+      }],
       dirs: ['./src/store', './src/hooks/**', './src/api', './src/utils'],
-
+      ignore: [
+        'tryOnScopeDispose',
+        'useNetwork',
+        'useOnline',
+        'usePreferredDark',
+        'useStorage',
+        'useStorageAsync',
+        'usePreferredDark',
+      ],
     }),
   ],
   css: {

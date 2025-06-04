@@ -13,6 +13,7 @@
     },
     "resolveJsonModule": true,
     "types": [
+      "wot-design-uni/global",
       "@dcloudio/types",
       "@uni-helper/uni-app-types",
       "@uni-helper/uni-ui-types",

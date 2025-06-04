@@ -1,34 +1,45 @@
 {
   "pages": [
-    // pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
+      "type": "home",
       "style": {
         "navigationBarTitleText": "uni-app-home"
       }
     },
     {
       "path": "pages/pinia/index",
+      "type": "page",
       "style": {
         "navigationBarTitleText": "状态管理工具（pinia）"
       }
     },
     {
       "path": "pages/request/index",
+      "type": "page",
       "style": {
         "navigationBarTitleText": "网络请求示例"
       }
     },
     {
+      "path": "pages/unocss/index",
+      "type": "page",
+      "style": {
+        "navigationBarTitleText": "UnoCSS 示例"
+      }
+    },
+    {
       "path": "pages/uview/index",
+      "type": "page",
       "style": {
         "navigationBarTitleText": "uView 示例组件"
       }
     },
     {
-      "path": "pages/unocss/index",
+      "path": "pages/wot/index",
+      "type": "page",
       "style": {
-        "navigationBarTitleText": "UnoCSS 示例"
+        "navigationBarTitleText": "WotUi 示例组件"
       }
     }
   ],
@@ -37,5 +48,19 @@
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
-  }
+  },
+  "subPackages": [
+    {
+      "root": "package-a",
+      "pages": [
+        {
+          "path": "page-a/index",
+          "type": "page",
+          "style": {
+            "navigationBarTitleText": "分包演示"
+          }
+        }
+      ]
+    }
+  ]
 }

@@ -1,3 +1,8 @@
+<route lang="yaml">
+style:
+  navigationBarTitleText: "状态管理工具（pinia）"
+</route>
+
 <script setup lang="ts">
 // @todo: uniapp暂时不支持vue3.4的一些语法糖，content组件的写法会导致报错
 

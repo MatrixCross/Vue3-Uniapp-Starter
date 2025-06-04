@@ -313,6 +313,7 @@ declare global {
   const useVirtualList: typeof import('@vueuse/core')['useVirtualList']
   const useVisible: typeof import('@uni-helper/uni-use')['useVisible']
   const useWakeLock: typeof import('@vueuse/core')['useWakeLock']
+  const useWdToast: typeof import('wot-design-uni')['useToast']
   const useWebNotification: typeof import('@vueuse/core')['useWebNotification']
   const useWebSocket: typeof import('@vueuse/core')['useWebSocket']
   const useWebWorker: typeof import('@vueuse/core')['useWebWorker']

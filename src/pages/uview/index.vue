@@ -1,3 +1,8 @@
+<route lang="yaml">
+style:
+  navigationBarTitleText: "uView 示例组件"
+</route>
+
 <script setup lang="ts">
 function showToast(type: string) {
   showUviewToast({

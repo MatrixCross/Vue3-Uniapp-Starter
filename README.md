@@ -43,6 +43,7 @@ pnpm create matrix-starter
 - [x] [Pinia](https://pinia.vuejs.org/) - 全局状态管理
 - [x] [uni-network](https://github.com/uni-helper/uni-network) 为 uni-app 打造的基于 Promise 的 HTTP 客户端
 - [x] [uni-use](https://vkuviewdoc.fsq.pub/) - uni-app (vue3) 组合式工具集
+- [x] [wot-design-ui](https://wot-design-uni.cn/) - Wot UI vue3组件库
 - [x] [uview-plus](https://uview-plus.jiangruyi.com/) - uview-plus vue3组件库
 
 ### Dev
@@ -59,6 +60,7 @@ pnpm create matrix-starter
 - [x] [@uni-helper/vite-plugin-uni-manifest](https://github.com/uni-helper/vite-plugin-uni-manifest) - 创建 manifest.config.(ts|mts|cts|js|cjs|mjs|json), 然后用 TypeScript 编写你的 manifest.json
 - [x] [@uni-helper/vite-plugin-uni-components](https://github.com/uni-helper/vite-plugin-uni-components) - 直接使用组件无须import，支持typescript类型提示
 - [x] [@uni-helper/vite-plugin-uni-layouts](https://github.com/uni-helper/vite-plugin-uni-layouts) - Vite 下 uni-app 的可定制布局框架
+- [x] [@uni-helper/vite-plugin-uni-pages](https://github.com/uni-helper/vite-plugin-uni-pages) - 在 Vite 驱动的 uni-app 上使用基于文件的路由系统
 
 ## 使用
 

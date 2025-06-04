@@ -1,3 +1,8 @@
+<route lang="yaml">
+style:
+  navigationBarTitleText: "UnoCSS 示例"
+</route>
+
 <script setup lang="ts">
 const flag = ref(true)
 

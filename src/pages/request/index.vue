@@ -1,3 +1,8 @@
+<route lang="yaml">
+style:
+  navigationBarTitleText: "网络请求示例"
+</route>
+
 <script lang="ts" setup>
 const phone = ref('12345678901')
 
