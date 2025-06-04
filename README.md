@@ -31,6 +31,8 @@ fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-templa
 
 ```sh
 pnpm create matrix-starter
+// 或者使用degit拉取最新模板，但是需要保证你的网络能访问这个仓库
+npx degit https://github.com/MatrixCross/Vue3-Uniapp-Starter vue3-uniapp-starter
 ```
 
 选择vue3 - uniapp模板
