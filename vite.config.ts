@@ -53,7 +53,7 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     autoImport({
       dts: './src/types/auto-imports.d.ts',
-      imports: ['vue', 'pinia', '@vueuse/core', uniuseAutoImports(), {
+      imports: ['vue', 'pinia', '@vueuse/core', 'uni-app', uniuseAutoImports(), {
         'wot-design-uni': [
           ['useToast', 'useWdToast'],
         ],
