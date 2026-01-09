@@ -1,9 +1,9 @@
-<route lang="yaml">
-style:
-  navigationBarTitleText: "WotUi 示例组件"
-</route>
-
 <script setup lang="ts">
+definePage({
+  style: {
+    navigationBarTitleText: 'WotUi 示例组件',
+  },
+})
 const toast = useWdToast()
 function showToast(type: 'show' | 'success' | 'info' | 'warning' | 'error' = 'show') {
   toast[type]?.('这是一个提示')

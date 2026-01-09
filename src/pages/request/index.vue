@@ -1,9 +1,9 @@
-<route lang="yaml">
-style:
-  navigationBarTitleText: "网络请求示例"
-</route>
-
 <script lang="ts" setup>
+definePage({
+  style: {
+    navigationBarTitleText: '网络请求示例',
+  },
+})
 const phone = ref('12345678901')
 
 function getCode() {
@@ -34,6 +34,7 @@ function getCode() {
 .axios-demo {
   text-align: center;
 }
+
 .title-h1 {
   font-size: 50rpx;
 }

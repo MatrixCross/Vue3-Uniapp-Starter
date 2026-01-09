@@ -17,6 +17,7 @@
       "@dcloudio/types",
       "@uni-helper/uni-app-types",
       "@uni-helper/uni-ui-types",
+      "@uni-helper/vite-plugin-uni-pages",
       "vite/client",
       "@types/node"
     ],

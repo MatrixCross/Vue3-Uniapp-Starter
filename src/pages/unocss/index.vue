@@ -1,9 +1,10 @@
-<route lang="yaml">
-style:
-  navigationBarTitleText: "UnoCSS 示例"
-</route>
-
 <script setup lang="ts">
+definePage({
+  style: {
+    navigationBarTitleText: 'UnoCSS 示例',
+  },
+})
+
 const flag = ref(true)
 
 function switchFlag() {
@@ -34,18 +35,12 @@ function switchFlag() {
       <view class="mr-4 text-lg text-c2">
         切换 class
       </view>
-      <view
-        class="rounded bg-#3498db/20 px-2 py-1 text-#3498db"
-        @click="switchFlag"
-      >
+      <view class="rounded bg-#3498db/20 px-2 py-1 text-#3498db" @click="switchFlag">
         点我切换
       </view>
     </view>
 
-    <view
-      class="mx-auto flex items-center rounded-xl p-5 shadow-md"
-      :class="[flag ? 'bg-white' : 'bg-green']"
-    >
+    <view class="mx-auto flex items-center rounded-xl p-5 shadow-md" :class="[flag ? 'bg-white' : 'bg-green']">
       <view>
         <view class="i-logos-unocss h-100 w-100 bg-cover" />
       </view>
@@ -80,26 +75,11 @@ function switchFlag() {
       基础动画
     </view>
     <view my-2 flex items-center justify-center>
-      <view
+      <view animate="iteration-infinite swing" m-3 h-100 w-100 bg-cover class="i-logos-unocss" />
 
-        animate="iteration-infinite swing"
-        m-3 h-100 w-100 bg-cover
-        class="i-logos-unocss"
-      />
+      <view m-3 h-100 w-100 bg-cover animate="pulse-bck" class="i-logos-unocss" />
 
-      <view
-
-        m-3 h-100 w-100 bg-cover
-        animate="pulse-bck"
-        class="i-logos-unocss"
-      />
-
-      <view
-
-        m-3 h-100 w-100 bg-cover
-        animate="rubber-band iteration-infinite"
-        class="i-logos-unocss"
-      />
+      <view m-3 h-100 w-100 bg-cover animate="rubber-band iteration-infinite" class="i-logos-unocss" />
     </view>
   </view>
 </template>

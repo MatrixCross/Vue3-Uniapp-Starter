@@ -44,6 +44,12 @@
       }
     }
   },
+  "app-harmony": {
+    "distribute": {}
+  },
+  "mp-harmony": {
+    "distribute": {}
+  },
   "quickapp": {},
   "mp-weixin": {
     "appid": "wxf326f1995627c671",

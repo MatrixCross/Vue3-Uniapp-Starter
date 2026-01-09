@@ -1,9 +1,9 @@
-<route type="home" lang="yaml">
-style:
-  navigationBarTitleText: "uni-app-home"
-</route>
-
 <script setup lang="ts">
+definePage({
+  style: {
+    navigationBarTitleText: 'uni-app首页',
+  },
+})
 const pages = reactive([
   {
     title: 'Pinia Demo',
@@ -55,10 +55,12 @@ const pages = reactive([
   font-style: normal;
   text-align: center;
 }
+
 .h2 {
   color: green;
   font-size: 50rpx;
 }
+
 navigator {
   color: #1e80ff;
 }

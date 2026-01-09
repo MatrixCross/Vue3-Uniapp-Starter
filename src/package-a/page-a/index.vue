@@ -1,9 +1,9 @@
-<route lang="yaml">
-style:
-  navigationBarTitleText: "分包演示"
-</route>
-
 <script setup lang="ts">
+definePage({
+  style: {
+    navigationBarTitleText: '分包演示',
+  },
+})
 </script>
 
 <template>

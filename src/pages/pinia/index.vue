@@ -1,13 +1,12 @@
-<route lang="yaml">
-style:
-  navigationBarTitleText: "状态管理工具（pinia）"
-</route>
-
 <script setup lang="ts">
-// @todo: uniapp暂时不支持vue3.4的一些语法糖，content组件的写法会导致报错
-
 // 获取自定义的store
 import DemoContent from './components/demo-content.vue'
+
+definePage({
+  style: {
+    navigationBarTitleText: '状态管理工具（pinia）',
+  },
+})
 
 const store = useCountStore()
 
@@ -23,12 +22,7 @@ const asyncAdd = () => store.asyncIncrease()
 
 <template>
   <view class="pinia-demo">
-    <DemoContent
-      v-model="store.count"
-      msg="Pinia(Replace Vuex)"
-      @add="store.count++"
-      @async-add="asyncAdd"
-    />
+    <DemoContent v-model="store.count" msg="Pinia(Replace Vuex)" @add="store.count++" @async-add="asyncAdd" />
   </view>
 </template>
 

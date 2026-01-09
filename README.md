@@ -21,9 +21,11 @@ fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-templa
 
 ## Env Suggest
 
-**Node >= 16**
+**Node >= 22**
 
-**pnpm >= 7**
+**pnpm >= 9**
+
+或者**bun >= 1.2**
 
 **Registry taobao - https://registry.npmmirror.com/**
 
@@ -68,7 +70,7 @@ npx degit https://github.com/MatrixCross/Vue3-Uniapp-Starter vue3-uniapp-starter
 
 ### 安装依赖
 
-**建议使用pnpm，依赖安装速度更快**
+**建议使用pnpm或者bun，依赖安装速度更快**
 
 ```sh
 npm i -g pnpm
@@ -76,6 +78,8 @@ npm i -g pnpm
 
 ```sh
 pnpm install
+# or
+bun install
 ```
 
 **MAC M1(ARM芯片)，其它操作系统无需关注**，正常运行需要手动安装 `esbuild-darwin-64`即可

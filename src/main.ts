@@ -1,6 +1,5 @@
 import * as Pinia from 'pinia'
 import { createUnistorage } from 'pinia-plugin-unistorage'
-// @ts-expect-error vk-uview-ui没有类型定义
 import uviewPlus from 'uview-plus'
 
 import { createSSRApp } from 'vue'
