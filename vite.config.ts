@@ -1,4 +1,3 @@
-import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import { uniuseAutoImports } from '@uni-helper/uni-use'
@@ -9,6 +8,7 @@ import manifest from '@uni-helper/vite-plugin-uni-manifest'
 import pages from '@uni-helper/vite-plugin-uni-pages'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 
 function UViewResolver(): ComponentResolver {
   return {

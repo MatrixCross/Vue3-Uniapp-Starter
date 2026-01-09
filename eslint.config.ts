@@ -16,13 +16,13 @@ export default antfu({
   },
   rules: {
     'no-console': 'off',
+    // 禁用 perfectionist/sort-imports 规则
+    'perfectionist/sort-imports': 'off',
     // 配置 import-x/order 规则
     'import-x/order': [
       'error',
       {
-        groups: [
-          ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-        ],
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
       },
     ],
   },
