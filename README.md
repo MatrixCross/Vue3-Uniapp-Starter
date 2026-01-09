@@ -27,6 +27,8 @@ fork from [ATQQ/uni-vue3-ts-template](https://github.com/ATQQ/uni-vue3-ts-templa
 
 或者**bun >= 1.2**
 
+> 如果使用bun，并且使用commitlint，需要将 `package.json` 中的 `npx --no-install commitlint ...` 改成 `bunx --no-install commitlint ...` , 否则可能会出现找不到已安装的commitlint，[这是关于bun上还在讨论的issue](https://github.com/oven-sh/bun/issues/10691)
+
 **Registry taobao - https://registry.npmmirror.com/**
 
 ## Use This Template
