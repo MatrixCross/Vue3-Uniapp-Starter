@@ -23,3 +23,5 @@ yarn-error.log*
 *.sln
 *.sw*
 .hbuilderx
+
+pages.json

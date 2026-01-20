@@ -39,6 +39,7 @@ export default defineConfig(async () => {
       pages({
         // 忽略
         exclude: ['**/components/*.*'],
+        homePage: 'pages/index/index',
         // 子包
         subPackages: ['src/package-a'],
         dts: './src/types/uni-pages.d.ts',
