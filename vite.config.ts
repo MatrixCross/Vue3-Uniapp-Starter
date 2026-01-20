@@ -8,7 +8,13 @@ import manifest from '@uni-helper/vite-plugin-uni-manifest'
 import pages from '@uni-helper/vite-plugin-uni-pages'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import { createJiti } from 'jiti'
 import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
+
+// unocss新版只提供esm打包，但是uniapp不支持
+// 暂时用jiti兼容，如果是最新的node22可以使用require(esm)就可以不需要jiti
+const jiti = createJiti(__filename)
+const unocss = jiti('unocss/vite').default
 
 function UViewResolver(): ComponentResolver {
   return {
@@ -27,7 +33,6 @@ function UViewResolver(): ComponentResolver {
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
-  const unocss = await import('unocss/vite').then(i => i.default)
   return {
     plugins: [
       manifest(),
@@ -36,6 +41,7 @@ export default defineConfig(async () => {
         exclude: ['**/components/*.*'],
         // 子包
         subPackages: ['src/package-a'],
+        dts: './src/types/uni-pages.d.ts',
       }),
       layouts(),
       components({
