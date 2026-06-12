@@ -8,7 +8,6 @@ type _LocationUrl =
   "/pages/pinia/index" |
   "/pages/request/index" |
   "/pages/unocss/index" |
-  "/pages/uview/index" |
   "/pages/wot/index" |
   "/package-a/page-a/index";
 

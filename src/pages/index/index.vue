@@ -14,10 +14,6 @@ const pages = reactive([
     url: '/pages/request/index',
   },
   {
-    title: 'uView Demo',
-    url: '/pages/uview/index',
-  },
-  {
     title: 'WotUi Demo',
     url: '/pages/wot/index',
   },

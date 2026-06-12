@@ -130,6 +130,7 @@ declare global {
   const shallowReadonly: typeof import('vue').shallowReadonly
   const shallowRef: typeof import('vue').shallowRef
   const showUviewToast: typeof import('../utils/toast').showUviewToast
+  const showWdToast: typeof import('../utils/toast').showWdToast
   const storeToRefs: typeof import('pinia').storeToRefs
   const syncRef: typeof import('@vueuse/core').syncRef
   const syncRefs: typeof import('@vueuse/core').syncRefs

@@ -1,7 +1,6 @@
 import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
-import { uniuseAutoImports } from '@uni-helper/uni-use'
-import components, { kebabCase } from '@uni-helper/vite-plugin-uni-components'
+import components from '@uni-helper/vite-plugin-uni-components'
 import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers'
 import layouts from '@uni-helper/vite-plugin-uni-layouts'
 import manifest from '@uni-helper/vite-plugin-uni-manifest'
@@ -9,27 +8,11 @@ import pages from '@uni-helper/vite-plugin-uni-pages'
 import autoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
 import { createJiti } from 'jiti'
-import type { ComponentResolver } from '@uni-helper/vite-plugin-uni-components'
 
 // unocss新版只提供esm打包，但是uniapp不支持
 // 暂时用jiti兼容，如果是最新的node22可以使用require(esm)就可以不需要jiti
 const jiti = createJiti(__filename)
 const unocss = jiti('unocss/vite').default
-
-function UViewResolver(): ComponentResolver {
-  return {
-    type: 'component',
-    resolve: (name: string) => {
-      if (name.match(/^U[A-Z]/)) {
-        const compName = kebabCase(name)
-        return {
-          name,
-          from: `uview-plus/components/${compName}/${compName}.vue`,
-        }
-      }
-    },
-  }
-}
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
@@ -47,7 +30,7 @@ export default defineConfig(async () => {
       layouts(),
       components({
         dts: './src/types/components.d.ts',
-        resolvers: [WotResolver(), UViewResolver()],
+        resolvers: [WotResolver()],
       }),
       unocss({
         hmrTopLevelAwait: false,
@@ -56,7 +39,7 @@ export default defineConfig(async () => {
       // https://github.com/antfu/unocss
       autoImport({
         dts: './src/types/auto-imports.d.ts',
-        imports: ['vue', 'pinia', 'uni-app', uniuseAutoImports(), {
+        imports: ['vue', 'pinia', 'uni-app', {
           'wot-design-uni': [
             ['useToast', 'useWdToast'],
           ],
@@ -76,7 +59,7 @@ export default defineConfig(async () => {
       },
     },
     server: {
-      // port: 8080,
+      port: 8080,
       host: '0.0.0.0',
       proxy: {
         '/api/': {
